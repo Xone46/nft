@@ -1,14 +1,26 @@
 <template>
 <div class="create-compte">
-  <div v-html="ball">
+  <div>
+      <div class="create">
+          
+            <label for="floatingInput">Create Compte</label>
+          
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+      </div>
   </div>
   <div>
-       <div class="ball"></div> 
+    <img src="../../assets/undraw.png" height="400px"/>
   </div>
   <div>
-       <div class="ball"></div> 
-  </div> 
   
+  </div>
 </div>
 
 
@@ -20,7 +32,6 @@ export default {
     name: "createCompte",
     data(){
         return {
-                  ball : [],
         }
     },
     methods : {
@@ -34,9 +45,7 @@ export default {
 
     },
     created(){
-        for(let i=0 ; i<200 ; i++) {
-            this.ball.push("<div class='ball1'></div>") 
-        }
+
 
     }
 
@@ -50,7 +59,7 @@ export default {
 }
 
 .create-compte > div{
-  width: calc(100%/3);
+  width: calc(100%/2);
   height: 400px;
 }
 .create-compte > div:nth-of-type(1) {
@@ -59,23 +68,31 @@ export default {
   }
 .create-compte >div:nth-of-type(2){
           background-color:#3535ff;
-          border-radius: 0px 363px 78px 0px;
+          border-radius: 0px 87px 0px 0px;
   }
 .create-compte >div:nth-of-type(3){
           background-color:#3535ff;
-           border-radius: 417px 45px 0px 86px;
+          width: 100%;
+          height: 10px;
   }
-.ball1 {
-    z-index: 2;
-    background-color: white;
-    height: 20px;
-    width: 20px;
-    border-radius: 10px;
-    position: relative;
-    top : 10px;
-    left : 10px;
+.create {
+          height: 350px;
+          width: 250px;
+          background-color: white;
+          margin: auto;
+          margin-top: 30px;
+          border-radius: 70px;
 }
-
+.form-floating{
+  width: 230px;
+  margin: auto;
+  height: 30px;
+  border: 1px solid blue;
+  border-radius: 10px;
+}
+.create > .form-floating:nth-of-type(1){
+  
+}
 </style>
 //  v-bind:style="{ width: computedWidth }"
 //  v-bind:style="{ width: computedWidth }"
